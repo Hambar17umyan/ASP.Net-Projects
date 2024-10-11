@@ -1,0 +1,6 @@
+@_002_CRUD_Implementation_With_Domains_HostAddress = http://localhost:5016
+
+GET {{_002_CRUD_Implementation_With_Domains_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

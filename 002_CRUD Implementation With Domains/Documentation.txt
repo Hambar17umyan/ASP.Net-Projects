@@ -1,0 +1,25 @@
+## API Endpoints
+
+### Product Endpoints
+- POST `/api/products` - Create Product
+- GET `/api/products/{id}` - Retrieve Product
+- PUT `/api/products/{id}` - Update Product
+- DELETE `/api/products/{id}` - Delete Product
+
+### Category Endpoints
+- POST `/api/categories` - Create Category
+- GET `/api/categories/{id}` - Retrieve Category
+- PUT `/api/categories/{id}` - Update Category
+- DELETE `/api/categories/{id}` - Delete Category
+
+### Order Endpoints
+- POST `/api/orders` - Create Order
+- GET `/api/orders/{id}` - Retrieve Order
+- PUT `/api/orders/{id}` - Update Order
+- DELETE `/api/orders/{id}` - Delete Order
+
+### Customer Endpoints
+- POST `/api/customers` - Create Customer
+- GET `/api/customers/{id}` - Retrieve Customer
+- PUT `/api/customers/{id}` - Update Customer
+- DELETE `/api/customers/{id}` - Delete Customer
