@@ -1,0 +1,6 @@
+@_001_Product_Calls_CRUD__HostAddress = http://localhost:5257
+
+GET {{_001_Product_Calls_CRUD__HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
