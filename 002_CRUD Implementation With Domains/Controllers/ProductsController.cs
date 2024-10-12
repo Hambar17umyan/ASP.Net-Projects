@@ -8,12 +8,11 @@ using System.Linq;
 
 namespace _002_CRUD_Implementation_With_Domains.Controllers
 {
-    [ApiController]
-    [Route("/api/products")]
-    public class ProductController : ControllerBase
+    [Route("/api/[controller]")]
+    public class ProductsController : ControllerBase
     {
         [HttpPost]
-        public ProductCreationResponse Create([FromBody] ProductCreationRequest request)
+        public ProductCreationResponse Create(ProductCreationRequest request)
         {
             var repo = GetRepo();
             var product = new Product(
@@ -46,7 +45,7 @@ namespace _002_CRUD_Implementation_With_Domains.Controllers
 
         [HttpPut]
         [Route("{id}")]
-        public ProductUpdatingResponse Update(int id, [FromBody] ProductUpdatingRequest request)
+        public ProductUpdatingResponse Update(int id, ProductUpdatingRequest request)
         {
             var repo = GetRepo();
             var res = repo.Update(id, new Product(request.Name, request.Description, request.Price, new Category(request.Category.Name, request.Category.Description)) { Id = id });

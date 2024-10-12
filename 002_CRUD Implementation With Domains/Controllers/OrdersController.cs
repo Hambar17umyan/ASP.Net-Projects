@@ -6,12 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace _002_CRUD_Implementation_With_Domains.Controllers
 {
-    [ApiController]
-    [Route("/api/orders")]
-    public class OrderController : ControllerBase
+    [Route("/api/[controller]")]
+    public class OrdersController : ControllerBase
     {
         [HttpPost]
-        public OrderCreationResponse Create([FromBody] OrderCreationRequest request)
+        public OrderCreationResponse Create(OrderCreationRequest request)
         {
             var repo = GetRepo();
             var order = new Order(
@@ -44,7 +43,7 @@ namespace _002_CRUD_Implementation_With_Domains.Controllers
 
         [HttpPut]
         [Route("{id}")]
-        public OrderUpdatingResponse Update(int id, [FromBody] OrderUpdatingRequest request)
+        public OrderUpdatingResponse Update(int id, OrderUpdatingRequest request)
         {
             var repo = GetRepo();
             var res = repo.Update(id, new Order(request.OrderDate, request.CustomerId, request.ProductIds) { Id = id });

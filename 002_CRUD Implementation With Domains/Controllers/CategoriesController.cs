@@ -8,12 +8,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace _002_CRUD_Implementation_With_Domains.Controllers
 {
-    [ApiController]
-    [Route("categories")]
-    public class CategoryController : ControllerBase
+    [Route("/api/[controller]")]
+    public class CategoriesController : ControllerBase
     {
         [HttpPost]
-        public CategoryCreationResponse Create([FromBody] CategoryCreationRequest request)
+        public CategoryCreationResponse Create(CategoryCreationRequest request)
         {
             var repo = GetRepo();
             var category = new Category(request.Name, request.Description);
@@ -41,7 +40,7 @@ namespace _002_CRUD_Implementation_With_Domains.Controllers
 
         [HttpPut]
         [Route("{id}")]
-        public CategoryUpdatingResponse Update(int id, [FromBody] CategoryUpdatingRequest request)
+        public CategoryUpdatingResponse Update(int id, CategoryUpdatingRequest request)
         {
             var repo = GetRepo();
             var res = repo.Update(id, new Category(request.Name, request.Description) { Id = id });

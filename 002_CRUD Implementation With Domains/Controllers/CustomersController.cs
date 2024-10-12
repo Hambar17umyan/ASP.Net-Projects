@@ -7,12 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace _002_CRUD_Implementation_With_Domains.Controllers
 {
-    [ApiController]
-    [Route("/api/customers")]
-    public class CustomerController : ControllerBase
+    [Route("/api/[controller]")]
+    public class CustomersController : ControllerBase
     {
         [HttpPost]
-        public CustomerCreationResponse Create([FromBody] CustomerCreationRequest request)
+        public CustomerCreationResponse Create(CustomerCreationRequest request)
         {
             var repo = GetRepo();
             var customer = new Customer(
@@ -44,7 +43,7 @@ namespace _002_CRUD_Implementation_With_Domains.Controllers
 
         [HttpPut]
         [Route("{id}")]
-        public CustomerUpdatingResponse Update(int id, [FromBody] CustomerUpdatingRequest request)
+        public CustomerUpdatingResponse Update(int id, CustomerUpdatingRequest request)
         {
             var repo = GetRepo();
             var res = repo.Update(id, new Customer(request.Name, request.Email, request.Address) { Id = id });
