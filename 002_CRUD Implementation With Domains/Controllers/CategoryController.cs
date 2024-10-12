@@ -1,5 +1,9 @@
 ﻿using _002_CRUD_Implementation_With_Domains.Data;
 using _002_CRUD_Implementation_With_Domains.Models.Domain_Models;
+using _002_CRUD_Implementation_With_Domains.Models.Request_Models.Category_Models;
+using _002_CRUD_Implementation_With_Domains.Models.Request_Models.Categroy_Models;
+using _002_CRUD_Implementation_With_Domains.Models.Request_Models.Product_Models;
+using _002_CRUD_Implementation_With_Domains.Models.Response_Models.Category_Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace _002_CRUD_Implementation_With_Domains.Controllers
@@ -9,9 +13,9 @@ namespace _002_CRUD_Implementation_With_Domains.Controllers
     public class CategoryController : ControllerBase
     {
         [HttpPost]
-        public CategoryCreationResponse Create1([FromBody] CategoryCreationRequest request)
+        public CategoryCreationResponse Create([FromBody] CategoryCreationRequest request)
         {
-            var repo = DataRepository<Category>.GetCategoryRepository();
+            var repo = GetRepo();
             var category = new Category(request.Name, request.Description);
             repo.Add(category);
             return new CategoryCreationResponse() { Id = category.Id };
@@ -19,9 +23,9 @@ namespace _002_CRUD_Implementation_With_Domains.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public CategoryGettingResponse Retrieve1(int id)
+        public CategoryGettingResponse Retrieve(int id)
         {
-            var repo = DataRepository<Category>.GetCategoryRepository();
+            var repo = GetRepo(); 
             var category = repo.Get(id);
             if (category is null)
                 return new CategoryGettingResponse();
@@ -29,31 +33,31 @@ namespace _002_CRUD_Implementation_With_Domains.Controllers
         }
 
         [HttpGet]
-        public AllCategoriesGettingResponse GetAll1()
+        public AllCategoriesGettingResponse GetAll()
         {
-            var repo = DataRepository<Category>.GetCategoryRepository();
-            return new AllCategoriesGettingResponse(repo.GetAll().Select(x=>new CategoryGettingResponse(x.Id, x.Name, x.Description)));
+            var repo = GetRepo();
+            return new AllCategoriesGettingResponse(repo.GetAll().Select(x => new CategoryGettingResponse(x.Id, x.Name, x.Description)));
         }
 
         [HttpPut]
         [Route("{id}")]
-        public CategoryUpdatingResponse Update1(int id, [FromBody] ProductUpdatingRequest request)
+        public CategoryUpdatingResponse Update(int id, [FromBody] CategoryUpdatingRequest request)
         {
-            var repo = DataRepository<Category>.GetCategoryRepository();
+            var repo = GetRepo();
             var res = repo.Update(id, new Category(request.Name, request.Description) { Id = id });
             return new CategoryUpdatingResponse(res, res ? id : null);
-
-
         }
 
         [HttpDelete]
         [Route("{id}")]
-        public CategoryDeletingResponse Delete1(int id)
+        public CategoryDeletingResponse Delete(int id)
         {
-            var repo = DataRepository<Category>.GetCategoryRepository();
+            var repo = GetRepo();
             var res = repo.Delete(id);
 
             return new CategoryDeletingResponse(res, res ? id : null);
         }
+
+        private static DataRepository<Category> GetRepo() => DataRepository<Category>.GetCategoryRepository();
     }
 }

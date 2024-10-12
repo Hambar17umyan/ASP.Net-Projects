@@ -1,4 +1,4 @@
-﻿namespace _002_CRUD_Implementation_With_Domains.Controllers
+﻿namespace _002_CRUD_Implementation_With_Domains.Models.Request_Models.Category_Models
 {
     public class CategoryCreationRequest
     {

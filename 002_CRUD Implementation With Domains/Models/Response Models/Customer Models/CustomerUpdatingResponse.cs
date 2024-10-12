@@ -1,22 +1,22 @@
-﻿namespace _002_CRUD_Implementation_With_Domains.Models.Response_Models.Category_Models
+﻿namespace _002_CRUD_Implementation_With_Domains.Models.Response_Models.Customer_Models
 {
-    public class CategoryUpdatingResponse
+    public class CustomerUpdatingResponse
     {
         public bool IsSuccess { get; set; }
         public int? Id { get; set; }
 
-        public CategoryUpdatingResponse(int id)
+        public CustomerUpdatingResponse(int id)
         {
             Id = id;
             IsSuccess = true;
         }
 
-        public CategoryUpdatingResponse()
+        public CustomerUpdatingResponse()
         {
             IsSuccess = false;
         }
 
-        public CategoryUpdatingResponse(bool isSuccess, int? id)
+        public CustomerUpdatingResponse(bool isSuccess, int? id)
         {
             IsSuccess = isSuccess;
             Id = id;

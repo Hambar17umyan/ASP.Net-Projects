@@ -1,4 +1,4 @@
-﻿namespace _002_CRUD_Implementation_With_Domains.Controllers
+﻿namespace _002_CRUD_Implementation_With_Domains.Models.Response_Models.Product_Models
 {
     public class ProductUpdatingResponse
     {

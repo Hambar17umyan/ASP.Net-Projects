@@ -1,6 +1,7 @@
 ﻿using _002_CRUD_Implementation_With_Domains.Models.Domain_Models;
+using _002_CRUD_Implementation_With_Domains.Models.Request_Models.Category_Models;
 
-namespace _002_CRUD_Implementation_With_Domains.Controllers
+namespace _002_CRUD_Implementation_With_Domains.Models.Request_Models.Product_Models
 {
     public class ProductCreationRequest
     {

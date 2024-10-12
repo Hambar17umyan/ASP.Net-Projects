@@ -2,17 +2,17 @@
 using _002_CRUD_Implementation_With_Domains.Models.Domain_Models;
 using System.Collections;
 
-namespace _002_CRUD_Implementation_With_Domains.Models.Response_Models.Category_Models
+namespace _002_CRUD_Implementation_With_Domains.Models.Response_Models.Customer_Models
 {
-    public class AllCategoriesGettingResponse : IEnumerable<CategoryGettingResponse>
+    public class AllCustomersGettingResponse : IEnumerable<CustomerGettingResponse>
     {
-        private IEnumerable<CategoryGettingResponse> _categories;
+        private IEnumerable<CustomerGettingResponse> _categories;
 
-        public AllCategoriesGettingResponse(IEnumerable<CategoryGettingResponse> categories)
+        public AllCustomersGettingResponse(IEnumerable<CustomerGettingResponse> categories)
         {
             _categories = categories;
         }
-        public IEnumerator<CategoryGettingResponse> GetEnumerator()
+        public IEnumerator<CustomerGettingResponse> GetEnumerator()
         {
             return _categories.GetEnumerator();
         }

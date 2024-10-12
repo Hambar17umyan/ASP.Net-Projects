@@ -11,11 +11,4 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\Request Models\Customer Models\" />
-    <Folder Include="Models\Request Models\Order Models\" />
-    <Folder Include="Models\Response Models\Customer Models\" />
-    <Folder Include="Models\Response Models\Order Models\" />
-  </ItemGroup>
-
 </Project>
