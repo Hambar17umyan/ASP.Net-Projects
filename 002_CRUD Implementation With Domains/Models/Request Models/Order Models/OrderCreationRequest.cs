@@ -2,6 +2,7 @@
 {
     public class OrderCreationRequest
     {
+        public OrderCreationRequest() { }
         public OrderCreationRequest(DateOnly orderDate, int customerId, List<int> productIds)
         {
             OrderDate = orderDate;

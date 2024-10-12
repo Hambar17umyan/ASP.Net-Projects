@@ -2,6 +2,10 @@
 {
     public class OrderUpdatingRequest
     {
+        public OrderUpdatingRequest()
+        {
+            
+        }
         public OrderUpdatingRequest(DateOnly orderDate, int customerId, List<int> productIds)
         {
             OrderDate = orderDate;
