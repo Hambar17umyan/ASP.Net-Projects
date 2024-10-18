@@ -1,0 +1,6 @@
+@_007_Middleware_for_Authentication_HostAddress = http://localhost:5218
+
+GET {{_007_Middleware_for_Authentication_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

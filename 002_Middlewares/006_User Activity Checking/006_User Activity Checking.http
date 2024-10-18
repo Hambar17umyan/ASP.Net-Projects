@@ -1,0 +1,6 @@
+@_006_User_Activity_Checking_HostAddress = http://localhost:5173
+
+GET {{_006_User_Activity_Checking_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
